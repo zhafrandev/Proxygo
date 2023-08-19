@@ -13,8 +13,8 @@
             "HOST": "cox"
         },
         {
-            "IP": "isi aja dulu",
-            "HOST": "iya diisi"
+            "IP": "",
+            "HOST": ""
         }
     ],
     "canada": [
@@ -31,8 +31,8 @@
             "HOST": "cox"
         },
         {
-            "IP": "",
-            "HOST": ""
+            "IP": "isi dulu aja",
+            "HOST": "coba diisi"
         }
     ]
 }
