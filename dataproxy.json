@@ -1,47 +1,43 @@
 {
     "united_states": [
         {
-            "IP": "150.22.56.48:48210",
-            "HOST": "comcast.net"
+            "IP": "162.0.220.218:40677",
+            "HOST": "verizon.net"
         },
         {
-            "IP": "150.22.57.38:48265",
-            "HOST": "hargray.net"
+            "IP": "66.29.128.243:32765",
+            "HOST": "cox.net"
         },
         {
-            "IP": "paten cuuuy",
-            "HOST": "cox"
+            "IP": "37.221.193.221:26579",
+            "HOST": "spectrum.com"
         },
         {
-            "IP": "isi dulu yaa",
-            "HOST": "semoga tampil di aplikasi"
+            "IP": "45.91.93.166:34548",
+            "HOST": "Frontier"
         }
     ],
     "canada": [
         {
-            "IP": "150.22.56.48:48210",
-            "HOST": "comcast.net"
+            "IP": "45.91.92.30:32402",
+            "HOST": "shawcable.net"
         },
         {
-            "IP": "150.22.57.38:48265",
-            "HOST": "hargray.net"
+            "IP": "162.19.7.58:32617",
+            "HOST": "telus.net"
         },
         {
-            "IP": "75.48.21.5:85000",
-            "HOST": "cox"
+            "IP": "45.91.93.166:24909",
+            "HOST": "videotron.ca"
         },
         {
-            "IP": "isi dulu aja",
-            "HOST": "coba diisi"
+            "IP": "",
+            "HOST": ""
         }
     ],
     "japan": [
         {
-            "IP": "",
-            "HOST": "Jpn"
-        },
-        {
-            "IP": "",
+            "IP": "212.83.138.245:32643",
             "HOST": "Jpn"
         },
         {
@@ -51,16 +47,12 @@
     ],
     "singapura": [
         {
-            "IP": "",
+            "IP": "92.53.90.84:5400",
             "HOST": "SG"
         },
         {
             "IP": "",
-            "HOST": "SG"
-        },
-        {
-            "IP": "",
-            "HOST": "SG"
+            "HOST": ""
         }
     ],
     "server-lainnya": [
