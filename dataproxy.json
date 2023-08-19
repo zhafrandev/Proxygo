@@ -34,43 +34,43 @@
             "IP": "isi dulu aja",
             "HOST": "coba diisi"
         }
-    ]
+    ],
     "japan": [
         {
-            "IP": "150.22.56.48:48210",
-            "HOST": "comcast.net"
+            "IP": "",
+            "HOST": "Jpn"
         },
         {
-            "IP": "150.22.57.38:48265",
-            "HOST": "hargray.net"
+            "IP": "",
+            "HOST": "Jpn"
         },
         {
-            "IP": "75.48.21.5:85000",
-            "HOST": "cox"
+            "IP": "",
+            "HOST": "Jpn"
         }
-    ]
+    ],
     "singapura": [
         {
-            "IP": "150.22.56.48:48210",
-            "HOST": "comcast.net"
+            "IP": "",
+            "HOST": "SG"
         },
         {
-            "IP": "150.22.57.38:48265",
-            "HOST": "hargray.net"
+            "IP": "",
+            "HOST": "SG"
         },
         {
-            "IP": "75.48.21.5:85000",
-            "HOST": "cox"
+            "IP": "",
+            "HOST": "SG"
         }
-    ]
-    "lain-lain": [
+    ],
+    "server-lainnya": [
         {
-            "IP": "150.22.56.48:48210",
-            "HOST": "comcast.net"
+            "IP": "",
+            "HOST": ""
         },
         {
-            "IP": "150.22.57.38:48265",
-            "HOST": "hargray.net"
+            "IP": "",
+            "HOST": ""
         }
     ]
 }
