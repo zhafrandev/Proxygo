@@ -28,22 +28,12 @@ function fetchData(category) {
         });
 }
 
-// Memanggil data "united_states" saat halaman dimuat pertama kali
+// Panggil fetchData saat halaman dimuat pertama kali
 document.addEventListener("DOMContentLoaded", function () {
     fetchData("united_states");
 });
 
-// Memanggil data "united_states" saat halaman dimuat pertama kali
-document.addEventListener("DOMContentLoaded", function () {
-    fetchData("canada");
-});
-
-// Tambahkan event listener ke tombol "Segarkan Data United States"
-document.getElementById("refresh-button-us").addEventListener("click", function () {
+// Tambahkan event listener ke tombol "Segarkan Data"
+document.getElementById("refresh-button").addEventListener("click", function () {
     fetchData("united_states");
-});
-
-// Tambahkan event listener ke tombol "Segarkan Data Canada"
-document.getElementById("refresh-button-ca").addEventListener("click", function () {
-    fetchData("canada");
 });
