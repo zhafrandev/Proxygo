@@ -35,4 +35,42 @@
             "HOST": "coba diisi"
         }
     ]
+    "japan": [
+        {
+            "IP": "150.22.56.48:48210",
+            "HOST": "comcast.net"
+        },
+        {
+            "IP": "150.22.57.38:48265",
+            "HOST": "hargray.net"
+        },
+        {
+            "IP": "75.48.21.5:85000",
+            "HOST": "cox"
+        }
+    ]
+    "singapura": [
+        {
+            "IP": "150.22.56.48:48210",
+            "HOST": "comcast.net"
+        },
+        {
+            "IP": "150.22.57.38:48265",
+            "HOST": "hargray.net"
+        },
+        {
+            "IP": "75.48.21.5:85000",
+            "HOST": "cox"
+        }
+    ]
+    "lain-lain": [
+        {
+            "IP": "150.22.56.48:48210",
+            "HOST": "comcast.net"
+        },
+        {
+            "IP": "150.22.57.38:48265",
+            "HOST": "hargray.net"
+        }
+    ]
 }
