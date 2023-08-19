@@ -35,6 +35,18 @@ h1, h2, th, td {
     margin: 6px;
     cursor: pointer;
 }
+.refresh-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px;
+    cursor: pointer;
+}
 
 table {
     width: 100%;
