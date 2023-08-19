@@ -7,6 +7,20 @@ body {
 h1, h2, th, td {
     color: black;
 }
+.image-container {
+    text-align: center; /* Mengatur gambar menjadi pusat horizontal di desktop */
+}
+
+.image-container img {
+    display: block; /* Membuat gambar menjadi elemen "block" */
+    margin: 0 auto; /* Memusatkan gambar secara horizontal di desktop */
+
+    /* CSS untuk perangkat seluler (lebar maksimum 768px) */
+    @media (max-width: 768px) {
+        margin: 0; /* Hapus margin horizontal */
+        max-width: 100%; /* Gambar akan mengisi lebar layar penuh */
+    }
+}
 
 .table-container {
     margin-top: 20px;
