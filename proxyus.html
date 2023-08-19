@@ -5,64 +5,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css"> <!-- Tautan ke berkas CSS -->
-    
 </head>
 
 <body>
     <div class="table-container">
         <div class="table-heading">INTRODUCTION</div>
         <table>
-            <tr><td colspan="2">
-    <p>Untuk Menggunakan IP Proxy dan Port dibawah ini, Kalian bisa menggunakan <strong><a
-                href="https://play.google.com/store/apps/details?id=com.newtoolsworks.tun2tap" target="_blank">Tun2TAP</a></strong> dan <strong><a
-                href="https://play.google.com/store/search?q=socksdroid&c=apps" target="_blank">SocksDroid</a></strong></p>
-    <p>Proxy mati? Mau request? Gabung Grup Whatsapp Proxy Premium Gratis disini -> <strong><a
-                href="https://chat.whatsapp.com/DfidqXsSW1T9J22W7hjIVy" target="_blank">Grup Whatsapp Proxy</a></strong></p>
-            </td></tr>
+            <tr>
+                <td colspan="2">
+                    <p>Untuk Menggunakan IP Proxy dan Port dibawah ini, Kalian bisa menggunakan <strong><a
+                            href="https://play.google.com/store/apps/details?id=com.newtoolsworks.tun2tap"
+                            target="_blank">Tun2TAP</a></strong> dan <strong><a
+                            href="https://play.google.com/store/search?q=socksdroid&c=apps" target="_blank">SocksDroid</a></strong>
+                    </p>
+                    <p>Proxy mati? Mau request? Gabung Grup Whatsapp Proxy Premium Gratis disini -> <strong><a
+                                href="https://chat.whatsapp.com/DfidqXsSW1T9J22W7hjIVy" target="_blank">Grup Whatsapp Proxy</a></strong>
+                    </p>
+                </td>
+            </tr>
         </table>
     </div>
-      
+
     <div class="table-container">
         <div class="table-heading">Note</div>
-          <table>
-            <tr><td>Untuk melihat Update Terbaru dari <strong>Daftar Proxy</strong> dihalaman ini, Silahkan pergi ke Pengaturan dengan mengklik <strong>"roda gigi"</strong> dipojok kanan atas layar, lalu klik pada <strong>"Clear Cache"</strong></td></tr>
-            <tr><td>Selanjutnya <strong>Reload</strong> Halaman ini dengan mengklik button <strong>"Segarkan Data"</strong> dibawah ini</td></tr>
-            <tr><td><button id="refresh-button">Segarkan Data</button></td></tr>
-          </table>
+        <table>
+            <tr>
+                <td>Untuk melihat Update Terbaru dari <strong>Daftar Proxy</strong> dihalaman ini, Silahkan pergi ke
+                    Pengaturan dengan mengklik <strong>"roda gigi"</strong> dipojok kanan atas layar, lalu klik pada
+                    <strong>"Clear Cache"</strong></td>
+            </tr>
+            <tr>
+                <td>Selanjutnya <strong>Reload</strong> Halaman ini dengan mengklik button <strong>"Segarkan Data"</strong>
+                    dibawah ini</td>
+            </tr>
+            <tr>
+                <td><button id="refresh-button">Segarkan Data</button></td>
+            </tr>
+        </table>
     </div>
-    
+
     <div class="table-container">
         <div class="table-heading">Daftar IP Proxy Server United States</div>
-       <table id="data-table">
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>HOST</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data akan dimasukkan di sini -->
-        </tbody>
-    </table>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>HOST</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan dimasukkan di sini -->
+            </tbody>
+        </table>
+    </div>
 
     <!-- Hubungkan file JavaScript terpisah -->
     <script src="script.js"></script>
-    <script>
-        // Panggil fetchData saat halaman dimuat pertama kali
-        document.addEventListener("DOMContentLoaded", function () {
-            fetchData("united_states");
-        });
-
-        // Tambahkan event listener ke tombol "Segarkan Data"
-        document.getElementById("refresh-button").addEventListener("click", function () {
-            fetchData("united_states");
-        });
-    </script>
-            
-    </div>
-    
-   
-
 </body>
 
 </html>
