@@ -27,13 +27,3 @@ function fetchData(category) {
             console.error("Error fetching JSON:", error);
         });
 }
-
-// Panggil fetchData saat halaman dimuat pertama kali
-document.addEventListener("DOMContentLoaded", function () {
-    fetchData("united_states");
-});
-
-// Tambahkan event listener ke tombol "Segarkan Data"
-document.getElementById("refresh-button").addEventListener("click", function () {
-    fetchData("united_states");
-});
