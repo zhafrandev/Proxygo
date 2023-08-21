@@ -5,66 +5,127 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css"> <!-- Tautan ke berkas CSS -->
+    
 </head>
 
 <body> 
     <button class="refresh-button" id="refresh-button">Refresh Data</button>
     
     <div class="table-container">
-        <div class="table-heading">Daftar IP Proxy Server</div>
-        <table id="data-table">
-            <thead>
-                <tr>
-                    <th>IP</th>
-                    <th>HOST</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data akan dimasukkan di sini -->
-            </tbody>
-        </table>
-    </div>
+        <div class="table-heading">Daftar IP Proxy Server United States</div>
+       <table id="data-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>HOST</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan di sini -->
+        </tbody>
+    </table>
 
     <!-- Hubungkan file JavaScript terpisah -->
     <script src="script.js"></script>
     <script>
         // Panggil fetchData saat halaman dimuat pertama kali
         document.addEventListener("DOMContentLoaded", function () {
-            fetchData();
+            fetchData("united_states");
         });
 
         // Tambahkan event listener ke tombol "Segarkan Data"
         document.getElementById("refresh-button").addEventListener("click", function () {
-            fetchData();
+            fetchData("united_states");
+        });
+    </script>
+    </div>
+
+    <div class="table-container">
+        <div class="table-heading">Daftar IP Proxy Server Canada</div>
+       <table id="data-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>HOST</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <!-- Hubungkan file JavaScript terpisah -->
+    <script src="script.js"></script>
+    <script>
+        // Panggil fetchData saat halaman dimuat pertama kali
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchData("canada");
         });
 
-        function fetchData() {
-            // Ganti URL sesuai dengan lokasi berkas JSON Anda
-            fetch("dataproxy.json")
-                .then(response => response.json())
-                .then(data => {
-                    const tableBody = document.querySelector("#data-table tbody");
-                    tableBody.innerHTML = ""; // Mengosongkan tabel sebelum memasukkan data baru
-
-                    // Loop melalui semua kategori
-                    for (const category in data) {
-                        if (data.hasOwnProperty(category)) {
-                            data[category].forEach(item => {
-                                const row = document.createElement("tr");
-                                const ipCell = document.createElement("td");
-                                const hostCell = document.createElement("td");
-                                ipCell.textContent = item.IP;
-                                hostCell.textContent = item.HOST;
-                                row.appendChild(ipCell);
-                                row.appendChild(hostCell);
-                                tableBody.appendChild(row);
-                            });
-                        }
-                    }
-                })
-                .catch(error => console.error("Terjadi kesalahan:", error));
-        }
+        // Tambahkan event listener ke tombol "Segarkan Data"
+        document.getElementById("refresh-button").addEventListener("click", function () {
+            fetchData("canada");
+        });
     </script>
-</body>
+    </div>
 
+    <div class="table-container">
+        <div class="table-heading">Daftar IP Proxy Japan</div>
+       <table id="data-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>HOST</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <!-- Hubungkan file JavaScript terpisah -->
+    <script src="script.js"></script>
+    <script>
+        // Panggil fetchData saat halaman dimuat pertama kali
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchData("japan");
+        });
+
+        // Tambahkan event listener ke tombol "Segarkan Data"
+        document.getElementById("refresh-button").addEventListener("click", function () {
+            fetchData("japan");
+        });
+    </script>
+    </div>
+
+    <div class="table-container">
+        <div class="table-heading">Daftar IP Proxy Singapura</div>
+       <table id="data-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>HOST</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <!-- Hubungkan file JavaScript terpisah -->
+    <script src="script.js"></script>
+    <script>
+        // Panggil fetchData saat halaman dimuat pertama kali
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchData("singapura");
+        });
+
+        // Tambahkan event listener ke tombol "Segarkan Data"
+        document.getElementById("refresh-button").addEventListener("click", function () {
+            fetchData("singapura");
+        });
+    </script>
+    </div>
+</body>
+   
 </html>
