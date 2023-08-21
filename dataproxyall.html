@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css"> <!-- Tautan ke berkas CSS -->
+    
+</head>
+
+<body> 
+    <button class="refresh-button" id="refresh-button">Refresh Data</button>
+    
+    <div class="table-container">
+        <div class="table-heading">Daftar IP Proxy</div>
+       <table id="data-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>HOST</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan dimasukkan di sini -->
+        </tbody>
+    </table>
+
+    <!-- Hubungkan file JavaScript terpisah -->
+    <script src="script.js"></script>
+    <script>
+        // Panggil fetchData saat halaman dimuat pertama kali
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchData();
+        });
+
+        // Tambahkan event listener ke tombol "Segarkan Data"
+        document.getElementById("refresh-button").addEventListener("click", function () {
+            fetchData();
+        });
+    </script>
+    </div>
+   
+</html>
