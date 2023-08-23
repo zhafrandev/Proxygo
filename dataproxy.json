@@ -17,7 +17,7 @@
             "HOST": "Suddenlink"
         },
         {
-            "IP": "67.213.212.53:17567",
+            "IP": "162.19.7.50:33459",
             "HOST": "spectrum.com"
         }
     ],
@@ -39,8 +39,8 @@
             "HOST": "videotron.ca"
         },
         {
-            "IP": "66.29.129.52:56918",
-            "HOST": "NRTC"
+            "IP": "212.83.143.60:51870",
+            "HOST": "cgocable.net"
         }
     ],
     "japan": [
