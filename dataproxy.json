@@ -1,24 +1,24 @@
 {
     "united_states": [
         {
-            "IP": "67.213.212.51:34046",
+            "IP": "66.29.128.242:34101",
             "HOST": "US Internet Corp"
         },
         {
             "IP": "67.213.212.48:36873",
-            "HOST": "cox.net"
+            "HOST": "US Internet Corp"
         },
         {
-            "IP": "67.213.212.49:29640",
-            "HOST": "comcast.net"
+            "IP": "67.213.212.38:60834",
+            "HOST": "US Internet Corp"
         },
         {
             "IP": "162.0.220.215:40454",
-            "HOST": "Suddenlink"
+            "HOST": "US Internet Corp"
         },
         {
             "IP": "162.19.7.50:33459",
-            "HOST": "spectrum.com"
+            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
