@@ -31,24 +31,24 @@
     ],
     "canada": [
         {
-            "IP": "212.83.138.172:52351",
-            "HOST": "shawcable.net"
+            "IP": "45.91.93.166:13318",
+            "HOST": "CA Internet Corp"
         },
         {
-            "IP": "162.19.7.50:48688",
-            "HOST": "rogers"
+            "IP": "174.138.176.75:19131",
+            "HOST": "CA Internet Corp"
         },
         {
-            "IP": "38.91.107.224:17809",
-            "HOST": "bell.ca"
+            "IP": "212.83.142.158:27225",
+            "HOST": "CA Internet Corp"
         },
         {
-            "IP": "46.105.43.188:22547",
-            "HOST": "videotron.ca"
+            "IP": "212.83.142.131:40175",
+            "HOST": "CA Internet Corp"
         },
         {
-            "IP": "212.83.143.60:51870",
-            "HOST": "cgocable.net"
+            "IP": "38.91.107.220:32424",
+            "HOST": "CA Internet Corp"
         }
     ],
     "japan": [
