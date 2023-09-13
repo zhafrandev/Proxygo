@@ -25,6 +25,14 @@
             "HOST": "US Internet Corp"
         },
         {
+            "IP": "37.221.193.221:30511",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "176.126.84.126:37230",
+            "HOST": "US Internet Corp"
+        },
+        {
             "IP": "209.159.153.21:58600",
             "HOST": "US Internet Corp"
         }
