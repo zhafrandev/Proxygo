@@ -1,6 +1,22 @@
 {
     "united_states": [
         {
+            "IP": "67.213.210.60:17014",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.56:29847",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.210.61:47433",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.58:50221",
+            "HOST": "US Internet Corp"
+        },
+        {
             "IP": "66.29.128.242:57281",
             "HOST": "US Internet Corp"
         },
@@ -9,31 +25,11 @@
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "23.105.170.33:62057",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "37.221.193.221:10625",
-            "HOST": "US Internet Corp"
-        },
-        {
             "IP": "67.213.212.52:59949",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "67.213.212.56:45623",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "37.221.193.221:20017",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "37.221.193.221:19149",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "37.221.193.221:13574",
+            "IP": "23.105.170.33:62057",
             "HOST": "US Internet Corp"
         }
     ],
