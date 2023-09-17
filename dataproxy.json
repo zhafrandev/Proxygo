@@ -43,7 +43,7 @@
     ],
     "canada": [
         {
-            "IP": "174.138.176.75:38342",
+            "IP": "138.201.21.228:55971",
             "HOST": "CA Internet Corp"
         },
         {
@@ -51,7 +51,7 @@
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "174.138.176.75:59353",
+            "IP": "138.201.21.228:48315",
             "HOST": "CA Internet Corp"
         },
         {
@@ -59,11 +59,11 @@
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "89.58.45.94:35583",
+            "IP": "38.91.107.224:18497",
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "195.154.43.86:30916",
+            "IP": "212.83.138.186:34586",
             "HOST": "CA Internet Corp"
         },
         {
@@ -71,7 +71,7 @@
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "162.19.7.56:15829",
+            "IP": "51.83.116.2:18941",
             "HOST": "CA Internet Corp"
         }
     ],
