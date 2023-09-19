@@ -31,23 +31,23 @@
     ],
     "canada": [
         {
+            "IP": "212.83.142.145:29437",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "138.201.21.228:64580",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "212.83.142.158:13035",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "212.83.142.158:13053",
+            "HOST": "CA Internet Corp"
+        },
+        {
             "IP": "38.91.106.214:15491",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "138.201.21.232:10594",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "138.201.21.233:58543",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "138.201.21.233:33558",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "212.83.143.147:64827",
             "HOST": "CA Internet Corp"
         }
     ],
