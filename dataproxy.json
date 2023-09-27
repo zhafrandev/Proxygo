@@ -35,7 +35,7 @@
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "51.83.116.3:47135",
+            "IP": "38.91.107.2:14016",
             "HOST": "CA Internet Corp"
         },
         {
@@ -43,11 +43,15 @@
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "212.83.143.97:32383",
+            "IP": "138.201.21.233:28329",
             "HOST": "CA Internet Corp"
         },
         {
-            "IP": "38.91.107.229:59269",
+            "IP": "51.83.116.3:44135",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "51.83.116.5:62785",
             "HOST": "CA Internet Corp"
         }
     ],
