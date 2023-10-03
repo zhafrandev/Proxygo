@@ -31,6 +31,14 @@
         {
             "IP": "51.254.167.45:41852",
             "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.57:39017",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.23.233.210:60386",
+            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
