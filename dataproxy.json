@@ -39,6 +39,34 @@
         {
             "IP": "66.29.128.243:13459",
             "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "38.91.107.220:13323",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.50:42232",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.56:58355",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.50:58367",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "162.0.220.216:47376",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.29.129.54:13388",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "37.221.193.221:23629",
+            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
