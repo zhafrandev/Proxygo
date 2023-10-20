@@ -36,7 +36,7 @@
 
     <div class="table-container">
         <div class="table-heading">Daftar IP Proxy Server United States</div>
-        <table id="data-table-us"> <!-- Ganti id tabel -->
+        <table id="data-table-united_states"> <!-- Ganti id tabel -->
             <thead>
                 <tr>
                     <th>IP</th>
@@ -48,7 +48,7 @@
             </tbody>
         </table>
         <!-- Hubungkan file JavaScript terpisah -->
-        <script src="aascriptproxyjson.js"></script>
+        <script src="script.js"></script>
         <script>
             // Panggil fetchData saat halaman dimuat pertama kali
             document.addEventListener("DOMContentLoaded", function () {
@@ -58,14 +58,13 @@
             // Tambahkan event listener ke tombol "Segarkan Data"
             document.getElementById("refresh-button").addEventListener("click", function () {
                 fetchData("united_states");
-
             });
         </script>
     </div>
 
     <div class="table-container">
         <div class="table-heading">Daftar IP Proxy Server Canada</div>
-        <table id="data-table-ca"> <!-- Ganti id tabel -->
+        <table id="data-table-canada"> <!-- Ganti id tabel -->
             <thead>
                 <tr>
                     <th>IP</th>
@@ -76,7 +75,7 @@
                 <!-- Data akan dimasukkan di sini -->
             </tbody>
         </table>
-        <script src="aascriptproxyjson.js"></script>
+        <script src="script.js"></script>
         <script>
             // Panggil fetchData saat halaman dimuat pertama kali
             document.addEventListener("DOMContentLoaded", function () {
@@ -86,7 +85,6 @@
             // Tambahkan event listener ke tombol "Segarkan Data"
             document.getElementById("refresh-button").addEventListener("click", function () {
                 fetchData("canada");
-
             });
         </script>
     </div>
