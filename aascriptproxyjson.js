@@ -1,5 +1,5 @@
 function fetchData(category) {
-    const tableName = `data-table-${category}`; // Menghasilkan id tabel yang sesuai
+    const tableName = `data-table-${category}`;
     const dataTable = document.getElementById(tableName);
     const jsonUrl = `https://zhafrandev.github.io/Proxygo/aadataproxyjson.json?v=${Date.now()}`;
 
