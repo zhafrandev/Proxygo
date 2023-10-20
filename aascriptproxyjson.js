@@ -17,6 +17,7 @@ function fetchData(category) {
             selectedData.forEach(item => {
                 const newRow = dataTable.querySelector("tbody").insertRow();
                 const ipCell = newRow.insertCell(0);
+                const hostCell = newRow.insertCell(1);
 
                 ipCell.textContent = item.IP;
                 hostCell.textContent = item.HOST;
