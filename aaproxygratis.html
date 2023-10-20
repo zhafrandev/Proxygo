@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -6,58 +5,78 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css"> <!-- Tautan ke berkas CSS -->
-    
 </head>
 
-<body>
-    <div class="table-container">
-        <div class="table-heading">INTRODUCTION</div>
-        <table>
-            <tr><td colspan="2">
-    <p>Untuk Menggunakan IP Proxy dan Port dibawah ini, Kalian bisa menggunakan <strong><a
-                href="https://play.google.com/store/apps/details?id=com.newtoolsworks.tun2tap" target="_blank">Tun2TAP</a></strong> dan <strong><a
-                href="https://play.google.com/store/search?q=socksdroid&c=apps" target="_blank">SocksDroid</a></strong></p>
-            </td></tr>
-        </table>
-    </div>
-      
-    <div class="table-container">
-        <div class="table-heading">Note</div>
-          <table>
-            <tr><td>Untuk melihat Update Terbaru dari <strong>Daftar Proxy</strong> dihalaman ini, Silahkan <strong>Reload Data Proxy</strong> dengan mengklik button <strong>"Refresh Data"</strong> dibawah ini</td></tr>
-            <tr><td><button class="refresh-button" id="refresh-button">Refresh Data</button></td></tr>
-          </table>
-    </div>
+<body> 
+    <button class="refresh-button" id="refresh-button">Refresh Data</button>
     
     <div class="table-container">
-        <div class="table-heading">Daftar IP Proxy Server United States</div>
-       <table id="data-table">
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>HOST</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Data akan dimasukkan di sini -->
-        </tbody>
-    </table>
+        <div class="table-heading">Daftar IP Proxy Server</div>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>IP</th>
+                    <th>HOST</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan dimasukkan di sini -->
+            </tbody>
+        </table>
+    </div>
 
     <!-- Hubungkan file JavaScript terpisah -->
     <script src="aascriptproxyjson.js"></script>
     <script>
         // Panggil fetchData saat halaman dimuat pertama kali
         document.addEventListener("DOMContentLoaded", function () {
-            fetchData("united_states");
+            fetchData();
         });
 
         // Tambahkan event listener ke tombol "Segarkan Data"
         document.getElementById("refresh-button").addEventListener("click", function () {
-            fetchData("united_states");
+            fetchData();
         });
+
+        // ...
+function fetchData() {
+    // Ganti URL sesuai dengan lokasi berkas JSON Anda
+    fetch("aadataproxyjson.json")
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector("#data-table tbody");
+            tableBody.innerHTML = ""; // Mengosongkan tabel sebelum memasukkan data baru
+
+            // Loop melalui semua kategori
+            for (const category in data) {
+                if (data.hasOwnProperty(category)) {
+                    // Tambahkan baris keterangan kategori
+                    const categoryRow = document.createElement("tr");
+                    const categoryCell = document.createElement("td");
+                    categoryCell.colSpan = 2; // Mengambil seluruh lebar kolom
+                    categoryCell.textContent = `Kategori: ${category}`;
+                    categoryRow.appendChild(categoryCell);
+                    tableBody.appendChild(categoryRow);
+
+                    // Tambahkan data IP dan HOST untuk kategori ini
+                    data[category].forEach(item => {
+                        const row = document.createElement("tr");
+                        const ipCell = document.createElement("td");
+                        const hostCell = document.createElement("td");
+                        ipCell.textContent = item.IP;
+                        hostCell.textContent = item.HOST;
+                        row.appendChild(ipCell);
+                        row.appendChild(hostCell);
+                        tableBody.appendChild(row);
+                    });
+                }
+            }
+        })
+        .catch(error => console.error("Terjadi kesalahan:", error));
+}
+// ...
+
     </script>
-    </div>
-    <div class="table-container">
-        <div class="table-heading">#Gaskeun</div>
 </body>
+
 </html>
