@@ -1,6 +1,5 @@
 function fetchData(category) {
-    const tableName = `data-table-${category}`;
-    const dataTable = document.getElementById(tableName);
+    const dataTable = document.getElementById("data-table");
     const jsonUrl = `https://zhafrandev.github.io/Proxygo/aadataproxyjson.json?v=${Date.now()}`;
 
     // Bersihkan tabel sebelum mengisi data baru
