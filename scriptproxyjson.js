@@ -19,6 +19,7 @@ function fetchData(category) {
                 const ipCell = newRow.insertCell(0);
 
                 ipCell.textContent = item.IP;
+                hostCell.textContent = item.HOST;
             });
         })
         .catch(error => {
