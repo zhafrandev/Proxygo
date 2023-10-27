@@ -103,6 +103,46 @@
         {
             "IP": "67.213.212.58:32906",
             "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "38.91.107.220:29346",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.210.61:56189",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "162.0.220.220:45744",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "162.0.220.217:44864",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "174.138.176.77:57075",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.57:47531",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "212.83.137.239:56202",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.23.233.210:62557",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "162.0.220.217:58127",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.29.128.241:30622",
+            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
