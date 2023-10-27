@@ -71,6 +71,38 @@
         {
             "IP": "67.213.212.53:56510",
             "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.57:60769",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.54:28521",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "23.105.170.34:54474",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "23.105.170.30:36861",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.38:43972",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.48:46590",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.53:57535",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.58:32906",
+            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
