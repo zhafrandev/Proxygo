@@ -1,63 +1,47 @@
 {
     "united_states": [
         {
-            "IP": "209.159.153.20:38535",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "23.105.170.32:10209",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "23.105.170.33:25278",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "162.0.220.215:18240",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "162.0.220.161:36317",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "162.19.7.47:35227",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "209.159.153.20:34010",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "174.138.176.74:10309",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "209.159.153.20:53446",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "209.159.153.21:26224",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "23.105.170.33:46802",
-            "HOST": "US Internet Corp"
-        },
-        {
             "IP": "66.29.128.246:65406",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "162.0.220.216:15442",
+            "IP": "162.0.220.161:62243",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "162.0.220.214:38420",
+            "IP": "209.159.153.22:34576",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "162.0.220.217:19178",
+            "IP": "209.159.153.22:21375",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "23.105.170.33:58928",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.23.233.210:40970",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.210.61:62124",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.210.175:59661",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.38:20792",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "162.0.220.217:10317",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "66.29.128.242:43679",
             "HOST": "US Internet Corp"
         }
     ],
