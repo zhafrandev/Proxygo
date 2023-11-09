@@ -1,69 +1,69 @@
 {
     "united_states": [
         {
-            "IP": "67.213.212.58:12897",
+            "IP": "67.213.212.49:16582",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "209.159.153.20:58217",
+            "IP": "209.159.153.20:48094",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "38.91.106.214:17710",
+            "IP": "209.159.153.21:40724",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "66.23.233.210:18266",
+            "IP": "66.29.129.53:61789",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "67.213.212.52:57253",
+            "IP": "67.213.210.175:61120",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "209.159.153.19:17110",
+            "IP": "37.221.193.221:14735",
             "HOST": "US Internet Corp"
         },
         {
-            "IP": "67.213.212.52:40857",
+            "IP": "67.213.212.38:40986",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "67.213.212.53:26377",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "23.88.121.205:19426",
+            "HOST": "US Internet Corp"
+        },
+        {
+            "IP": "38.91.107.224:43679",
             "HOST": "US Internet Corp"
         },
         {
             "IP": "67.213.212.52:32120",
             "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "162.0.220.219:62365",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "66.23.233.210:56664",
-            "HOST": "US Internet Corp"
-        },
-        {
-            "IP": "209.159.153.21:64534",
-            "HOST": "US Internet Corp"
         }
     ],
     "canada": [
         {
+            "IP": "138.201.21.227:34137",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "212.83.138.192:13200",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "138.201.21.227:52046",
+            "HOST": "CA Internet Corp"
+        },
+        {
+            "IP": "195.154.43.86:41643",
+            "HOST": "CA Internet Corp"
+        },
+        {
             "IP": "66.29.129.53:59263",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "212.83.143.147:46980",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "162.19.7.57:28640",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "66.29.129.53:59263",
-            "HOST": "CA Internet Corp"
-        },
-        {
-            "IP": "212.83.142.145:59570",
             "HOST": "CA Internet Corp"
         }
     ]
