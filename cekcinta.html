@@ -20,7 +20,7 @@
         }
         #hasil {
             font-size: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #4CAF50;
         }
         #tips {
@@ -69,7 +69,43 @@
         <button id="tombol-tips" disabled>Tips dan Saran</button>
     </div>
     <script>
-        // kode JavaScript sama seperti sebelumnya
+        const tombolCek = document.getElementById('tombol-cek');
+        const tombolTips = document.getElementById('tombol-tips');
+        const hasil = document.getElementById('hasil');
+        const tips = document.getElementById('tips');
+        const inputNama1 = document.getElementById('input-nama1');
+        const inputNama2 = document.getElementById('input-nama2');
+
+        tombolCek.addEventListener('click', () => {
+            const nama1 = inputNama1.value;
+            const nama2 = inputNama2.value;
+            const messages = [
+                `Selamat! ${nama1} dan ${nama2} sangat cocok!`,
+                `${nama1} dan ${nama2} memiliki kecocokan yang baik.`,
+                `Sayang sekali, ${nama1} dan ${nama2} tidak terlalu cocok.`
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            hasil.textContent = randomMessage;
+            const utterance = new SpeechSynthesisUtterance(randomMessage);
+            utterance.lang = 'id-ID';
+            speechSynthesis.speak(utterance);
+            tombolTips.disabled = false;
+        });
+
+        tombolTips.addEventListener('click', () => {
+            const tipsMessages = [
+                "Tips: Jaga komunikasi yang baik dan saling memahami satu sama lain.",
+                "Saran: Lakukan kegiatan bersama-sama untuk memperkuat hubungan.",
+                "Tips: Jangan lupa untuk saling menghargai dan memaafkan.",
+                "Saran: Berikan kejutan kecil untuk membuat pasangan Anda bahagia.",
+                "Tips: Jangan terlalu keras pada diri sendiri dan pasangan Anda."
+            ];
+            const randomTipsMessage = tipsMessages[Math.floor(Math.random() * tipsMessages.length)];
+            tips.textContent = randomTipsMessage;
+            const utterance = new SpeechSynthesisUtterance = new SpeechSynthesisUtterance(randomTipsMessage);
+            utterance.lang = 'id-ID';
+            speechSynthesis.speak(utterance);
+        });
     </script>
 </body>
 </html>
