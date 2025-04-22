@@ -110,3 +110,14 @@
                 utterance.lang = 'id-ID';
                 speechSynthesis.speak(utterance);
             }
+                else {
+                tips.textContent = "Kecocokan cinta Anda tidak terlalu tinggi. Pastikan Anda untuk terus berusaha dan memahami satu sama lain.";
+                const text = "Kecocokan cinta Anda tidak terlalu tinggi. Pastikan Anda untuk terus berusaha dan memahami satu sama lain.";
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'id-ID';
+                speechSynthesis.speak(utterance);
+            }
+        });
+    </script>
+</body>
+</html>
