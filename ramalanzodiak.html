@@ -95,14 +95,21 @@
             const nama = document.getElementById('nama').value;
             const horoskop = document.getElementById('horoskop').value;
 
-            // Menggunakan API untuk mendapatkan ramalan horoskop
             fetch(`https://aztro.sameerkumar.website/?sign=${horoskop}&day=today`)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     const ramalan = `Halo ${nama}, ramalan horoskop Anda hari ini adalah: ${data.description}`;
                     hasil.innerHTML = ramalan;
                 })
-                .catch(error => console.error(error));
+                .catch(error => {
+                    hasil.innerHTML = `Error: ${error.message}`;
+                    console.error(error);
+                });
         });
     </script>
 </body>
