@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Khodam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        #hasil {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #judul {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        #input-nama {
+            width: 500px;
+            height: 60px;
+            font-size: 24px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #tombol-cek {
+            width: 200px;
+            height: 60px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="hasil"></p>
+        <h1 id="judul">Cek Khodam</h1>
+        <input type="text" id="input-nama" placeholder="Masukkan nama Anda">
+        <button id="tombol-cek">Cek Khodam</button>
+    </div>
+
+    <script>
+        const khodamList = ['Harimau', 'Ular', 'Kucing', 'Burung', 'Gajah'];
+        const tombolCek = document.getElementById('tombol-cek');
+        const hasil = document.getElementById('hasil');
+        const inputNama = document.getElementById('input-nama');
+
+        tombolCek.addEventListener('click', () => {
+            const nama = inputNama.value;
+            const khodam = khodamList[Math.floor(Math.random() * khodamList.length)];
+            hasil.textContent = `Khodam ${nama} adalah: ${khodam}`;
+        });
+    </script>
+</body>
+</html>
