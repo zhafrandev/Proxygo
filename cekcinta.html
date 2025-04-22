@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Cinta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        #hasil {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #judul {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        #input-nama1, #input-nama2 {
+            width: 500px;
+            height: 60px;
+            font-size: 24px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #tombol-cek, #tombol-detail {
+            width: 200px;
+            height: 60px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #persentase {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        #tips {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="hasil"></p>
+        <h1 id="judul">Cek Cinta</h1>
+        <input type="text" id="input-nama1" placeholder="Masukkan nama Anda">
+        <input type="text" id="input-nama2" placeholder="Masukkan nama pasangan Anda">
+        <button id="tombol-cek">Cek Kecocokan Cinta</button>
+        <button id="tombol-detail" disabled>Detail</button>
+        <p id="persentase"></p>
+        <p id="tips"></p>
+    </div>
+    <script>
+        const tombolCek = document.getElementById('tombol-cek');
+        const tombolDetail = document.getElementById('tombol-detail');
+        const hasil = document.getElementById('hasil');
+        const persentase = document.getElementById('persentase');
+        const tips = document.getElementById('tips');
+        const inputNama1 = document.getElementById('input-nama1');
+        const inputNama2 = document.getElementById('input-nama2');
+        let kecocokan;
+
+        tombolCek.addEventListener('click', () => {
+            const nama1 = inputNama1.value;
+            const nama2 = inputNama2.value;
+            kecocokan = Math.floor(Math.random() * 100);
+            hasil.textContent = `Kecocokan cinta antara ${nama1} dan ${nama2} adalah`;
+            persentase.textContent = `${kecocokan}%`;
+
+            if (kecocokan > 80) {
+                persentase.style.color = "#4CAF50";
+            } else if (kecocokan >= 50 && kecocokan <= 80) {
+                persentase.style.color = "#FFC107";
+            } else {
+                persentase.style.color = "#F44336";
+            }
+
+            const text = `Kecocokan cinta antara ${nama1} dan ${nama2} adalah ${kecocokan} persen`;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID';
+            speechSynthesis.speak(utterance);
+
+            tombolDetail.disabled = false;
+        });
+
+        tombolDetail.addEventListener('click', () => {
+            if (kecocokan > 80) {
+                tips.textContent = "Selamat! Kecocokan cinta Anda sangat tinggi. Pastikan Anda untuk terus berkomunikasi dan memahami satu sama lain.";
+                const text = "Selamat! Kecocokan cinta Anda sangat tinggi. Pastikan Anda untuk terus berkomunikasi dan memahami satu sama lain.";
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'id-ID';
+                speechSynthesis.speak(utterance);
+            } else if (kecocokan >= 50 && kecocokan <= 80) {
+                tips.textContent = "Kecocokan cinta Anda cukup baik. Pastikan Anda untuk terus berusaha dan memahami satu sama lain.";
+                const text = "Kecocokan cinta Anda cukup baik. Pastikan Anda untuk terus berusaha dan memahami satu sama lain.";
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'id-ID';
+                speechSynthesis.speak(utterance);
