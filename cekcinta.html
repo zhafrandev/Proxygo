@@ -1,3 +1,4 @@
+Mohon maaf atas kesalahan sebelumnya. Berikut adalah kode yang sudah diperbaiki untuk hasil cek kecocokan cinta dan tips dan saran:
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,17 +80,21 @@
         tombolCek.addEventListener('click', () => {
             const nama1 = inputNama1.value;
             const nama2 = inputNama2.value;
-            const messages = [
-                `Selamat! ${nama1} dan ${nama2} sangat cocok!`,
-                `${nama1} dan ${nama2} memiliki kecocokan yang baik.`,
-                `Sayang sekali, ${nama1} dan ${nama2} tidak terlalu cocok.`
-            ];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            hasil.textContent = randomMessage;
-            const utterance = new SpeechSynthesisUtterance(randomMessage);
-            utterance.lang = 'id-ID';
-            speechSynthesis.speak(utterance);
-            tombolTips.disabled = false;
+            if (nama1 && nama2) {
+                const messages = [
+                    `Selamat! ${nama1} dan ${nama2} sangat cocok!`,
+                    `${nama1} dan ${nama2} memiliki kecocokan yang baik.`,
+                    `Sayang sekali, ${nama1} dan ${nama2} tidak terlalu cocok.`
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                hasil.textContent = randomMessage;
+                const utterance = new SpeechSynthesisUtterance(randomMessage);
+                utterance.lang = 'id-ID';
+                speechSynthesis.speak(utterance);
+                tombolTips.disabled = false;
+            } else {
+                hasil.textContent = "Mohon masukkan nama Anda dan pasangan Anda.";
+            }
         });
 
         tombolTips.addEventListener('click', () => {
@@ -102,7 +107,7 @@
             ];
             const randomTipsMessage = tipsMessages[Math.floor(Math.random() * tipsMessages.length)];
             tips.textContent = randomTipsMessage;
-            const utterance = new SpeechSynthesisUtterance = new SpeechSynthesisUtterance(randomTipsMessage);
+            const utterance = new SpeechSynthesisUtterance(randomTipsMessage);
             utterance.lang = 'id-ID';
             speechSynthesis.speak(utterance);
         });
