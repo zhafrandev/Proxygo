@@ -54,12 +54,12 @@
 </head>
 <body>
     <div class="container">
-        <p id="hasil"></p>
         <h1 id="judul">Cek Cinta</h1>
         <input type="text" id="input-nama1" placeholder="Masukkan nama Anda">
         <input type="text" id="input-nama2" placeholder="Masukkan nama pasangan Anda">
         <button id="tombol-cek">Cek Kecocokan Cinta</button>
         <button id="tombol-detail" disabled>Detail</button>
+        <p id="hasil"></p>
         <p id="persentase"></p>
         <p id="tips"></p>
     </div>
@@ -109,3 +109,4 @@
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'id-ID';
                 speechSynthesis.speak(utterance);
+            }
