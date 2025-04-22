@@ -49,13 +49,21 @@
         <input type="text" id="input-nama" placeholder="Masukkan nama Anda">
         <button id="tombol-cek">Cek Khodam</button>
     </div>
-
     <script>
-        const khodamList = ['Harimau', 'Ular', 'Kucing', 'Burung', 'Gajah'];
+        const khodamList = [
+            'Kucing Gendut', 'Burung Ceria', 'Harimau Ceroboh', 'Ular Tidur', 'Gajah Bahagia',
+            'Macan Manis', 'Kuda Lincah', 'Ikan Senyum', 'Naga Lucu', 'Kucing Imut',
+            'Burung Nyanyi', 'Harimau Gembira', 'Ular Mengantuk', 'Gajah Ceria', 'Macan Bahagia',
+            'Kelinci Lucu', 'Tikus Ceria', 'Anjing Imut', 'Kucing Bahagia', 'Burung Gembira',
+            'Kambing Lincah', 'Sapi Senyum', 'Ayam Ceria', 'Bebek Imut', 'Kelinci Gembira',
+            'Tikus Nyanyi', 'Anjing Bahagia', 'Kucing Ceria', 'Burung Imut', 'Harimau Manis',
+            'Ular Ceria', 'Gajah Imut', 'Macan Lincah', 'Kuda Senyum', 'Ikan Bahagia',
+            'Naga Ceria', 'Kucing Gembira', 'Burung Senyum', 'Harimau Lucu', 'Ular Imut',
+            'Gajah Gembira', 'Macan Ceria', 'Kuda Imut', 'Ikan Lincah', 'Naga Manis'
+        ];
         const tombolCek = document.getElementById('tombol-cek');
         const hasil = document.getElementById('hasil');
         const inputNama = document.getElementById('input-nama');
-
         tombolCek.addEventListener('click', () => {
             const nama = inputNama.value;
             const khodam = khodamList[Math.floor(Math.random() * khodamList.length)];
