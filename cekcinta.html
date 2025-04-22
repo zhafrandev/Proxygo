@@ -15,6 +15,11 @@
         .container {
             text-align: center;
         }
+        #hasil {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
         #judul {
             font-size: 48px;
             margin-bottom: 20px;
@@ -37,20 +42,15 @@
             cursor: pointer;
             margin: 10px;
         }
-        #hasil {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #4CAF50;
-        }
     </style>
 </head>
 <body>
     <div class="container">
+        <p id="hasil"></p>
         <h1 id="judul">Cek Cinta</h1>
         <input type="text" id="input-nama1" placeholder="Masukkan nama Anda">
         <input type="text" id="input-nama2" placeholder="Masukkan nama pasangan Anda">
         <button id="tombol-cek">Cek Kecocokan Cinta</button>
-        <p id="hasil"></p>
     </div>
     <script>
         const tombolCek = document.getElementById('tombol-cek');
