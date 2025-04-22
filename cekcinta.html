@@ -31,7 +31,7 @@
             padding: 10px;
             margin-bottom: 20px;
         }
-        #tombol-cek {
+        #tombol-cek, #tombol-tips {
             width: 200px;
             height: 60px;
             font-size: 24px;
@@ -42,6 +42,10 @@
             cursor: pointer;
             margin: 10px;
         }
+        #tips {
+            font-size: 24px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -51,10 +55,14 @@
         <input type="text" id="input-nama1" placeholder="Masukkan nama Anda">
         <input type="text" id="input-nama2" placeholder="Masukkan nama pasangan Anda">
         <button id="tombol-cek">Cek Kecocokan Cinta</button>
+        <button id="tombol-tips" disabled>Tips dan Saran</button>
+        <p id="tips"></p>
     </div>
     <script>
         const tombolCek = document.getElementById('tombol-cek');
+        const tombolTips = document.getElementById('tombol-tips');
         const hasil = document.getElementById('hasil');
+        const tips = document.getElementById('tips');
         const inputNama1 = document.getElementById('input-nama1');
         const inputNama2 = document.getElementById('input-nama2');
 
@@ -69,6 +77,15 @@
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             hasil.textContent = randomMessage;
             const utterance = new SpeechSynthesisUtterance(randomMessage);
+            utterance.lang = 'id-ID';
+            speechSynthesis.speak(utterance);
+            tombolTips.disabled = false;
+        });
+
+        tombolTips.addEventListener('click', () => {
+            const tipsMessage = "Tips: Jaga komunikasi yang baik dan saling memahami satu sama lain.";
+            tips.textContent = tipsMessage;
+            const utterance = new SpeechSynthesisUtterance(tipsMessage);
             utterance.lang = 'id-ID';
             speechSynthesis.speak(utterance);
         });
