@@ -68,6 +68,10 @@
             const nama = inputNama.value;
             const khodam = khodamList[Math.floor(Math.random() * khodamList.length)];
             hasil.textContent = `Khodam ${nama} adalah: ${khodam}`;
+            const text = `Khodam ${nama} adalah ${khodam}`;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID';
+            speechSynthesis.speak(utterance);
         });
     </script>
 </body>
