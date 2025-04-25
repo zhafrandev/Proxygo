@@ -46,8 +46,6 @@
 			if (text !== '') {
 				const utterance = new SpeechSynthesisUtterance(text);
 				utterance.lang = 'id-ID'; // Bahasa Indonesia
-				utterance.volume = 1.5; // Volume lebih besar
-				utterance.rate = 1; // Kecepatan bicara normal
 				speechSynthesis.speak(utterance);
 			}
 		});
