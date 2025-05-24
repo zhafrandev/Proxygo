@@ -15,38 +15,24 @@
     .container {
       max-width: 600px;
       margin: 0 auto;
-      padding: 15px;
+      padding: 10px;
     }
     h3 {
-      margin-bottom: 5px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
     input[type="text"], button {
-      font-size: 13px;
-      padding: 8px 10px;
+      width: 100%;
+      padding: 6px 8px;
+      margin: 6px 0;
+      font-size: 12px;
       box-sizing: border-box;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    input[type="text"] {
-      width: 250px;
-      margin-bottom: 10px;
-      display: block;
     }
     button {
-      width: auto;
-      padding: 8px 20px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-      font-weight: bold;
+      border-radius: 5px;
     }
     button:hover {
       background-color: #45a049;
@@ -57,32 +43,31 @@
       padding: 10px 15px;
       margin-top: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      font-family: Arial, sans-serif;
       font-size: 10px;
+      font-family: Arial, sans-serif;
     }
     .baris {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 4px;
     }
     .kolom {
-      width: 48%;
+      padding-right: 10px;
+      white-space: nowrap;
     }
     @media screen and (max-width: 480px) {
+      h3 {
+        font-size: 14px;
+      }
       .container {
-        padding: 10px;
+        padding: 8px;
       }
-      input[type="text"] {
-        width: 100%;
+      input[type="text"], button {
+        font-size: 11px;
+        padding: 5px 6px;
       }
-      button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-      }
-      .kolom {
-        width: 100%;
+      .hasil {
+        font-size: 10px;
       }
     }
   </style>
@@ -185,7 +170,7 @@ Jam Baik: 11.00-12.00`
       const thn = parseInt(input.substring(4, 8), 10);
       const date = new Date(thn, bln, tgl);
 
-      if (isNaN(date.getTime())) {
+      if (isNaN(date)) {
         alert("Tanggal tidak valid.");
         return;
       }
@@ -212,20 +197,20 @@ Jam Baik: 11.00-12.00`
       div.className = "hasil";
       div.innerHTML = `
         <div class="baris">
-          <div class="kolom">Tanggal:  ${tgl}-${bln + 1}-${thn}</div>
-          <div class="kolom">Weton:    ${weton}</div>
+          <div class="kolom">Tanggal: ${tgl}-${bln + 1}-${thn}</div>
+          <div class="kolom">Weton: ${weton}</div>
         </div>
         <div class="baris">
-          <div class="kolom">Shio:     ${shio}</div>
-          <div class="kolom">Zodiak:   ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}</div>
+          <div class="kolom">Shio: ${shio}</div>
+          <div class="kolom">Zodiak: ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}</div>
         </div>
-        <div style="margin-top:10px; white-space: pre-wrap;">${ramalan}</div>
+        <div style="margin-top: 10px; white-space: pre-wrap;">${ramalan}</div>
       `;
-
       listHasil.prepend(div);
 
-      // Text-to-Speech mulai dari tanggal
-      const tts = new SpeechSynthesisUtterance(`Tanggal: ${tgl}-${bln + 1}-${thn}. Weton: ${weton}. Shio: ${shio}. Zodiak: ${zodiak}. Ramalan: ${ramalan.replace(/\n/g, ". ")}`);
+      const tts = new SpeechSynthesisUtterance(
+        `Tanggal: ${tgl}-${bln + 1}-${thn}. Weton: ${weton}. Shio: ${shio}. Zodiak: ${zodiak}. ${ramalan.replace(/\n/g, ". ")}`
+      );
       tts.lang = "id-ID";
       tts.rate = 1;
       window.speechSynthesis.cancel();
