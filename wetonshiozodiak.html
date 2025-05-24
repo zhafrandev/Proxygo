@@ -181,11 +181,11 @@ Zodiak:   ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}`;
       listHasil.prepend(div);
 
       // TTS
-      const tts = new SpeechSynthesisUtterance(`Ramalan untuk zodiak ${zodiak}. ${ramalan.replace(/\n/g, ". ")}`);
-      tts.lang = "id-ID";
-      tts.rate = 1;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(tts);
+      const tts = new SpeechSynthesisUtterance(`Tanggal: ${tgl}-${bln + 1}-${thn}. Weton: ${weton}. Shio: ${shio}. Zodiak: ${zodiak}. Ramalan: ${ramalan.replace(/\n/g, ". ")}`);
+    tts.lang = "id-ID";
+    tts.rate = 1;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(tts);
     }
   </script>
 </body>
