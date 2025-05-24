@@ -1,142 +1,177 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramalan Hari Ini</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        input[type="text"], button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-        }
-        #hasil {
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ramalan Hari Ini</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3e8e41;
+    }
+    #hasil {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Ramalan Berdasarkan Tanggal Lahir</h2>
-        <label for="tanggal">Masukkan Tanggal Lahir (format: ttbbtttt)</label>
-        <input type="text" id="tanggal" placeholder="Contoh: 19101992">
-        <button onclick="proses()">Lihat Ramalan</button>
-        <div id="hasil"></div>
-    </div>
+  <div class="container">
+    <h2>Ramalan Hari Ini</h2>
+    <label for="tanggal">Masukkan Tanggal Lahir (TTBBTTTT):</label>
+    <input type="text" id="tanggal" placeholder="Contoh: 19101992" required />
+    <button onclick="tampilkanRamalan()">Tampilkan Ramalan</button>
+    <div id="hasil"></div>
+  </div>
 
-    <script>
-        const pasaran = ["Legi", "Pahing", "Pon", "Wage", "Kliwon"];
-        const hariJawa = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  <script>
+    const zodiakList = [
+      { nama: "capricorn", awal: "1222", akhir: "0119" },
+      { nama: "aquarius", awal: "0120", akhir: "0218" },
+      { nama: "pisces", awal: "0219", akhir: "0320" },
+      { nama: "aries", awal: "0321", akhir: "0419" },
+      { nama: "taurus", awal: "0420", akhir: "0520" },
+      { nama: "gemini", awal: "0521", akhir: "0620" },
+      { nama: "cancer", awal: "0621", akhir: "0722" },
+      { nama: "leo", awal: "0723", akhir: "0822" },
+      { nama: "virgo", awal: "0823", akhir: "0922" },
+      { nama: "libra", awal: "0923", akhir: "1022" },
+      { nama: "scorpio", awal: "1023", akhir: "1121" },
+      { nama: "sagittarius", awal: "1122", akhir: "1221" }
+    ];
 
-        const zodiakList = [
-            { zodiak: "Capricorn", start: [12, 22], end: [1, 19] },
-            { zodiak: "Aquarius", start: [1, 20], end: [2, 18] },
-            { zodiak: "Pisces", start: [2, 19], end: [3, 20] },
-            { zodiak: "Aries", start: [3, 21], end: [4, 19] },
-            { zodiak: "Taurus", start: [4, 20], end: [5, 20] },
-            { zodiak: "Gemini", start: [5, 21], end: [6, 20] },
-            { zodiak: "Cancer", start: [6, 21], end: [7, 22] },
-            { zodiak: "Leo", start: [7, 23], end: [8, 22] },
-            { zodiak: "Virgo", start: [8, 23], end: [9, 22] },
-            { zodiak: "Libra", start: [9, 23], end: [10, 22] },
-            { zodiak: "Scorpio", start: [10, 23], end: [11, 21] },
-            { zodiak: "Sagittarius", start: [11, 22], end: [12, 21] }
-        ];
+    const shioList = [
+      "Monyet", "Ayam", "Anjing", "Babi", "Tikus", "Kerbau",
+      "Macan", "Kelinci", "Naga", "Ular", "Kuda", "Kambing"
+    ];
 
-        const shioList = [
-            "Monyet", "Ayam", "Anjing", "Babi", "Tikus", "Kerbau",
-            "Macan", "Kelinci", "Naga", "Ular", "Kuda", "Kambing"
-        ];
+    const hariPasaran = ["Legi", "Pahing", "Pon", "Wage", "Kliwon"];
+    const hariJawa = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 
-        const ramalanData = {
-            "aries": "Jangan pasif, raih peluang! Keuangan lancar, asmara menantang.",
-            "taurus": "Tunjukkan aksi nyata, jangan banyak debat. Perhatian pasangan dibutuhkan.",
-            "gemini": "Atur strategi menuju kesuksesan, tetap positif dalam hubungan.",
-            "cancer": "Ambil tindakan nyata, jangan tunggu! Jaga emosi dalam cinta.",
-            "leo": "Waspadai pemborosan, tapi karier menanjak. Percaya pada pasangan.",
-            "virgo": "Waspadai perubahan, tetap tenang. Dengarkan pasanganmu.",
-            "libra": "Pikir dulu sebelum bertindak. Jangan tinggi hati dalam cinta.",
-            "scorpio": "Lanjutkan rencana, tetap optimis. Jadilah pasangan yang menyenangkan.",
-            "sagittarius": "Bangkit dari masa lalu! Dengarkan pasangan tanpa menghakimi.",
-            "capricorn": "Tetap rendah hati. Jangan menuduh tanpa bukti dalam asmara.",
-            "aquarius": "Jangan paksa sesuatu. Bersikap tenang dengan pasangan.",
-            "pisces": "Selesaikan tanggung jawab. Jangan termakan gosip dalam hubungan."
-        };
+    const ramalanData = {
+      aries: `Peruntungan: Jangan pasif, raih peluang!
+Keuangan: Jalani dulu, hambatan bisa diselesaikan sambil jalan.
+Asmara: Pasanganmu marah karena janji tak ditepati.
+Jam Baik: 11.00-12.00`,
+      taurus: `Peruntungan: Tunjukkan bukti, bukan debat!
+Keuangan: Berani ambil keputusan!
+Asmara: Beri perhatian, jangan acuh!
+Jam Baik: 14.00-15.00`,
+      gemini: `Peruntungan: Kesuksesan sudah dekat, atur langkah!
+Keuangan: Cari cara dapat hasil besar!
+Asmara: Bersikap hangat, sabar, dan positif!
+Jam Baik: 14.00-15.00`,
+      cancer: `Peruntungan: Jangan hanya berharap, ambil tindakan!
+Keuangan: Banyak bergerak, jangan berdiam diri!
+Asmara: Tetap tenang, hindari pertengkaran!
+Jam Baik: 11.00-12.00`,
+      leo: `Peruntungan: Kesuksesan terus meningkat, tetap waspada!
+Keuangan: Waspadai pemborosan!
+Asmara: Percayakan pada Dia, jangan percaya omongan orang!
+Jam Baik: 14.00-15.00`,
+      virgo: `Peruntungan: Berhati-hati dalam menyikapi perubahan!
+Keuangan: Pemasukan mengalir, tapi kebutuhan naik!
+Asmara: Pertahankan suasana baik, dengarkan dia!
+Jam Baik: 14.00-15.00`,
+      libra: `Peruntungan: Jangan terburu-buru, pikir dengan teliti!
+Keuangan: Terima bantuan dengan tangan terbuka!
+Asmara: Jangan bicara terlalu tinggi di depannya!
+Jam Baik: 12.00-13.00`,
+      scorpio: `Peruntungan: Lanjutkan rencana yang tertunda, optimis!
+Keuangan: Fokus pada masa depan, jangan terobsesi masa lalu!
+Asmara: Berikan nasehat dengan lembut, jadilah sosok menyenangkan!
+Jam Baik: 13.00-14.00`,
+      sagittarius: `Peruntungan: Bangkit kembali, jangan terus pesimis!
+Keuangan: Manfaatkan peluang untuk bangkit!
+Asmara: Terima pandangannya dengan bijak, jangan negatif!
+Jam Baik: 09.00-10.00`,
+      capricorn: `Peruntungan: Jangan takabur, tetap waspada!
+Keuangan: Jangan biarkan orang lain untung dari kesalahanmu!
+Asmara: Hilangkan prasangka buruk, jangan tuduh tanpa bukti!
+Jam Baik: 15.00-16.00`,
+      aquarius: `Peruntungan: Jalani dengan sewajarnya, jangan memaksakan diri!
+Keuangan: Pengeluaran masih dalam batas kewajaran!
+Asmara: Jangan mendramatisir hal biasa, hindari keributan!
+Jam Baik: 17.00-18.00`,
+      pisces: `Peruntungan: Selesaikan tanggungan, jangan tunda!
+Keuangan: Kencangkan ikat pinggang, hemat!
+Asmara: Jangan percaya gosip, jangan ikut memojokkan!
+Jam Baik: 11.00-12.00`
+    };
 
-        function proses() {
-            const input = document.getElementById("tanggal").value.trim();
-            const hasil = document.getElementById("hasil");
-            hasil.innerHTML = "";
+    function tampilkanRamalan() {
+      const input = document.getElementById("tanggal").value.trim();
+      const hasil = document.getElementById("hasil");
 
-            if (!/^\d{8}$/.test(input)) {
-                hasil.innerHTML = "Format tanggal salah. Gunakan format ttbbtttt, contoh: 19101992.";
-                return;
-            }
+      if (!/^\d{8}$/.test(input)) {
+        hasil.innerHTML = "Format salah. Gunakan TTBBTTTT, contoh: 19101992";
+        return;
+      }
 
-            const tgl = parseInt(input.substring(0, 2));
-            const bln = parseInt(input.substring(2, 4));
-            const thn = parseInt(input.substring(4, 8));
+      const tgl = parseInt(input.substring(0, 2), 10);
+      const bln = parseInt(input.substring(2, 4), 10) - 1; // bulan 0-11
+      const thn = parseInt(input.substring(4, 8), 10);
+      const date = new Date(thn, bln, tgl);
 
-            const birthDate = new Date(thn, bln - 1, tgl);
-            if (birthDate.getDate() !== tgl || birthDate.getMonth() !== bln - 1 || birthDate.getFullYear() !== thn) {
-                hasil.innerHTML = "Tanggal tidak valid.";
-                return;
-            }
+      if (isNaN(date)) {
+        hasil.innerHTML = "Tanggal tidak valid.";
+        return;
+      }
 
-            // Cari zodiak
-            let zodiak = "";
-            for (let z of zodiakList) {
-                const [startB, startT] = z.start;
-                const [endB, endT] = z.end;
-                if (
-                    (bln === startB && tgl >= startT) ||
-                    (bln === endB && tgl <= endT) ||
-                    (startB > endB && (bln === startB && tgl >= startT || bln === endB && tgl <= endT))
-                ) {
-                    zodiak = z.zodiak.toLowerCase();
-                    break;
-                }
-            }
+      // Cari Weton
+      const hari = date.getDay();
+      const offset = Math.floor((date - new Date(1970, 0, 1)) / 86400000);
+      const pasaran = hariPasaran[offset % 5];
+      const hariJw = hariJawa[hari];
+      const weton = `${hariJw} ${pasaran}`;
 
-            // Cari shio
-            const shio = shioList[(thn - 1900) % 12];
+      // Cari Shio
+      const shio = shioList[(thn - 1900) % 12];
 
-            // Cari weton
-            const baseDate = new Date(1970, 0, 1); // 1 Jan 1970 adalah Kamis Legi
-            const daysDiff = Math.floor((birthDate - baseDate) / (1000 * 60 * 60 * 24));
-            const hari = hariJawa[birthDate.getDay()];
-            const pasaranName = pasaran[(daysDiff % 5 + 5) % 5];
-            const weton = `${hari} ${pasaranName}`;
-
-            // Tampilkan hasil
-            hasil.innerHTML = `
-                <strong>Tanggal Lahir:</strong> ${tgl}-${bln}-${thn}<br>
-                <strong>Weton:</strong> ${weton}<br>
-                <strong>Shio:</strong> ${shio}<br>
-                <strong>Zodiak:</strong> ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}<br><br>
-                <strong>Ramalan Hari Ini:</strong><br>${ramalanData[zodiak] || "Belum tersedia"}
-            `;
+      // Cari Zodiak
+      const mmdd = ("0" + (bln + 1)).slice(-2) + ("0" + tgl).slice(-2);
+      const zodiak = zodiakList.find(z => {
+        if (z.awal < z.akhir) {
+          return mmdd >= z.awal && mmdd <= z.akhir;
+        } else {
+          return mmdd >= z.awal || mmdd <= z.akhir;
         }
-    </script>
+      })?.nama || "Tidak diketahui";
+
+      // Ramalan
+      const ramalan = ramalanData[zodiak] || "Ramalan tidak ditemukan untuk zodiak ini.";
+
+      hasil.innerHTML = `
+        <strong>Tanggal Lahir:</strong> ${tgl}-${bln + 1}-${thn}<br/>
+        <strong>Weton:</strong> ${weton}<br/>
+        <strong>Shio:</strong> ${shio}<br/>
+        <strong>Zodiak:</strong> ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}<br/><br/>
+        <strong>Ramalan Hari Ini:</strong><br/>${ramalan.replace(/\n/g, "<br/>")}
+      `;
+    }
+  </script>
 </body>
 </html>
