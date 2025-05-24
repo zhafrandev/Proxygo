@@ -39,20 +39,12 @@
       padding: 10px 15px;
       margin-top: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-family: monospace;
+      white-space: pre-wrap;
     }
-    .hasil strong {
-      display: inline-block;
-      width: 100px;
-    }
-    @media screen and (max-width: 480px) {
-      .container {
-        padding: 10px;
-      }
-      .hasil strong {
-        width: auto;
-        display: block;
-        margin-top: 5px;
-      }
+    .ramalan {
+      font-family: sans-serif;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -98,46 +90,46 @@ Jam Baik: 11.00-12.00`,
 Keuangan: Berani ambil keputusan!
 Asmara: Beri perhatian, jangan acuh!
 Jam Baik: 14.00-15.00`,
-      gemini: `Peruntungan: Kesuksesan sudah dekat, atur langkah!
-Keuangan: Cari cara dapat hasil besar!
-Asmara: Bersikap hangat, sabar, dan positif!
-Jam Baik: 14.00-15.00`,
-      cancer: `Peruntungan: Jangan hanya berharap, ambil tindakan!
-Keuangan: Banyak bergerak, jangan berdiam diri!
-Asmara: Tetap tenang, hindari pertengkaran!
-Jam Baik: 11.00-12.00`,
-      leo: `Peruntungan: Kesuksesan terus meningkat, tetap waspada!
-Keuangan: Waspadai pemborosan!
-Asmara: Percayakan pada Dia, jangan percaya omongan orang!
-Jam Baik: 14.00-15.00`,
-      virgo: `Peruntungan: Berhati-hati dalam menyikapi perubahan!
-Keuangan: Pemasukan mengalir, tapi kebutuhan naik!
-Asmara: Pertahankan suasana baik, dengarkan dia!
-Jam Baik: 14.00-15.00`,
+      gemini: `Peruntungan: Jangan plin-plan, mantapkan langkah!
+Keuangan: Jangan boros untuk hal tidak penting.
+Asmara: Bersikaplah terbuka!
+Jam Baik: 10.00-11.00`,
+      cancer: `Peruntungan: Emosi jangan menguasai keputusan.
+Keuangan: Waspadai pengeluaran tak terduga.
+Asmara: Luangkan waktu untuk pasangan.
+Jam Baik: 09.00-10.00`,
+      leo: `Peruntungan: Ambil alih kendali hidupmu.
+Keuangan: Ada peluang investasi menarik.
+Asmara: Saling pengertian akan menguatkan.
+Jam Baik: 08.00-09.00`,
+      virgo: `Peruntungan: Rinci dan teliti akan jadi keunggulanmu.
+Keuangan: Periksa ulang rencana keuanganmu.
+Asmara: Jangan terlalu mengkritik pasangan.
+Jam Baik: 13.00-14.00`,
       libra: `Peruntungan: Jangan terburu-buru, pikir dengan teliti!
 Keuangan: Terima bantuan dengan tangan terbuka!
 Asmara: Jangan bicara terlalu tinggi di depannya!
 Jam Baik: 12.00-13.00`,
-      scorpio: `Peruntungan: Lanjutkan rencana yang tertunda, optimis!
-Keuangan: Fokus pada masa depan, jangan terobsesi masa lalu!
-Asmara: Berikan nasehat dengan lembut, jadilah sosok menyenangkan!
-Jam Baik: 13.00-14.00`,
-      sagittarius: `Peruntungan: Bangkit kembali, jangan terus pesimis!
-Keuangan: Manfaatkan peluang untuk bangkit!
-Asmara: Terima pandangannya dengan bijak, jangan negatif!
-Jam Baik: 09.00-10.00`,
-      capricorn: `Peruntungan: Jangan takabur, tetap waspada!
-Keuangan: Jangan biarkan orang lain untung dari kesalahanmu!
-Asmara: Hilangkan prasangka buruk, jangan tuduh tanpa bukti!
+      scorpio: `Peruntungan: Energi positif datang, manfaatkan!
+Keuangan: Saatnya menabung lebih banyak.
+Asmara: Ungkapkan isi hatimu!
 Jam Baik: 15.00-16.00`,
-      aquarius: `Peruntungan: Jalani dengan sewajarnya, jangan memaksakan diri!
-Keuangan: Pengeluaran masih dalam batas kewajaran!
-Asmara: Jangan mendramatisir hal biasa, hindari keributan!
+      sagittarius: `Peruntungan: Jangan sia-siakan kesempatan.
+Keuangan: Bijaklah dalam belanja.
+Asmara: Petualangan cinta menantimu.
+Jam Baik: 16.00-17.00`,
+      capricorn: `Peruntungan: Fokus pada targetmu.
+Keuangan: Usaha kerasmu mulai membuahkan hasil.
+Asmara: Jangan terlalu kaku.
+Jam Baik: 07.00-08.00`,
+      aquarius: `Peruntungan: Gunakan ide kreatifmu.
+Keuangan: Jangan spekulasi berlebihan.
+Asmara: Cinta butuh perhatian.
 Jam Baik: 17.00-18.00`,
-      pisces: `Peruntungan: Selesaikan tanggungan, jangan tunda!
-Keuangan: Kencangkan ikat pinggang, hemat!
-Asmara: Jangan percaya gosip, jangan ikut memojokkan!
-Jam Baik: 11.00-12.00`
+      pisces: `Peruntungan: Ikuti intuisi, tapi tetap realistis.
+Keuangan: Jangan tergoda belanja impulsif.
+Asmara: Saling percaya adalah kunci.
+Jam Baik: 18.00-19.00`,
     };
 
     function tampilkanRamalan() {
@@ -177,25 +169,22 @@ Jam Baik: 11.00-12.00`
 
       const ramalan = ramalanData[zodiak] || "Ramalan tidak ditemukan untuk zodiak ini.";
 
-      // Buat elemen hasil baru
+      const teksHasil = `Tanggal:  ${tgl}-${bln + 1}-${thn}
+Weton:    ${weton}
+Shio:     ${shio}
+Zodiak:   ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}`;
+
       const div = document.createElement("div");
       div.className = "hasil";
-      div.innerHTML = `
-        <div><strong>Tanggal:</strong> ${tgl}-${bln + 1}-${thn}</div>
-        <div><strong>Weton:</strong> ${weton}</div>
-        <div><strong>Shio:</strong> ${shio}</div>
-        <div><strong>Zodiak:</strong> ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}</div>
-        <div style="margin-top: 10px;"><strong>Ramalan:</strong><br/>${ramalan.replace(/\n/g, "<br/>")}</div>
-      `;
+      div.innerHTML = `<pre>${teksHasil}</pre><div class="ramalan">${ramalan.replace(/\n/g, "<br>")}</div>`;
 
-      // Tambahkan di atas
       listHasil.prepend(div);
 
-      // SUARA
+      // TTS
       const tts = new SpeechSynthesisUtterance(`Ramalan untuk zodiak ${zodiak}. ${ramalan.replace(/\n/g, ". ")}`);
       tts.lang = "id-ID";
       tts.rate = 1;
-      window.speechSynthesis.cancel(); // stop jika ada yang sedang dibaca
+      window.speechSynthesis.cancel();
       window.speechSynthesis.speak(tts);
     }
   </script>
