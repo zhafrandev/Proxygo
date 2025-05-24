@@ -62,7 +62,6 @@
         <form id="form-ramalan">
             <label for="nama">Nama:</label>
             <input type="text" id="nama" name="nama" required>
-
             <label for="horoskop">Horoskop:</label>
             <select id="horoskop" name="horoskop" required>
                 <option value="">Pilih Horoskop</option>
@@ -79,38 +78,39 @@
                 <option value="sagittarius">Sagittarius</option>
                 <option value="capricorn">Capricorn</option>
             </select>
-
             <button id="btn-ramalan">Ramalan</button>
         </form>
         <div id="hasil"></div>
     </div>
 
     <script>
-        const formRamalan = document.getElementById('form-ramalan');
-        const btnRamalan = document.getElementById('btn-ramalan');
-        const hasil = document.getElementById('hasil');
+const ramalanData = {
+    "aries": "Peruntungan: Jangan pasif, raih peluang! Keuangan: Jalani dulu, hambatan bisa diselesaikan sambil jalan. Asmara: Pasanganmu marah karena janji tak ditepati. Jam Baik: 11.00-12.00",
+    "taurus": "Peruntungan: Tunjukkan bukti, bukan debat! Keuangan: Berani ambil keputusan! Asmara: Beri perhatian, jangan acuh! Jam Baik: 14.00-15.00",
+    "gemini": "Peruntungan: Kesuksesan sudah dekat, atur langkah! Keuangan: Cari cara dapat hasil besar! Asmara: Bersikap hangat, sabar, dan positif! Jam Baik: 14.00-15.00",
+    "cancer": "Peruntungan: Jangan hanya berharap, ambil tindakan! Keuangan: Banyak bergerak, jangan berdiam diri! Asmara: Tetap tenang, hindari pertengkaran! Jam Baik: 11.00-12.00",
+    "leo": "Peruntungan: Kesuksesan terus meningkat, tetap waspada! Keuangan: Waspadai pemborosan! Asmara: Percayakan pada Dia, jangan percaya omongan orang! Jam Baik: 14.00-15.00",
+    "virgo": "Peruntungan: Berhati-hati dalam menyikapi perubahan! Keuangan: Pemasukan mengalir, tapi kebutuhan naik! Asmara: Pertahankan suasana baik, dengarkan dia! Jam Baik: 14.00-15.00",
+    "libra": "Peruntungan: Jangan terburu-buru, pikir dengan teliti! Keuangan: Terima bantuan dengan tangan terbuka! Asmara: Jangan bicara terlalu tinggi di depannya! Jam Baik: 12.00-13.00",
+    "scorpio": "Peruntungan: Lanjutkan rencana yang tertunda, optimis! Keuangan: Fokus pada masa depan, jangan terobsesi masa lalu! Asmara: Berikan nasehat dengan lembut, jadilah sosok menyenangkan! Jam Baik: 13.00-14.00",
+    "sagittarius": "Peruntungan: Bangkit kembali, jangan terus pesimis! Keuangan: Manfaatkan peluang untuk bangkit! Asmara: Terima pandangannya dengan bijak, jangan negatif! Jam Baik: 09.00-10.00",
+    "capricorn": "Peruntungan: Jangan takabur, tetap waspada! Keuangan: Jangan biarkan orang lain untung dari kesalahanmu! Asmara: Hilangkan prasangka buruk, jangan tuduh tanpa bukti! Jam Baik: 15.00-16.00",
+    "aquarius": "Peruntungan: Jalani dengan sewajarnya, jangan memaksakan diri! Keuangan: Pengeluaran masih dalam batas kewajaran! Asmara: Jangan mendramatisir hal biasa, hindari keributan! Jam Baik: 17.00-18.00",
+    "pisces": "Peruntungan: Selesaikan tanggungan, jangan tunda! Keuangan: Kencangkan ikat pinggang, hemat! Asmara: Jangan percaya gosip, jangan ikut memojokkan! Jam Baik: 11.00-12.00"
+};
 
-        btnRamalan.addEventListener('click', (e) => {
-            e.preventDefault();
-            const nama = document.getElementById('nama').value;
-            const horoskop = document.getElementById('horoskop').value;
+const formRamalan = document.getElementById('form-ramalan');
+const btnRamalan = document.getElementById('btn-ramalan');
+const hasil = document.getElementById('hasil');
 
-            fetch(`https://aztro.sameerkumar.website/?sign=${horoskop}&day=today`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const ramalan = `Halo ${nama}, ramalan horoskop Anda hari ini adalah: ${data.description}`;
-                    hasil.innerHTML = ramalan;
-                })
-                .catch(error => {
-                    hasil.innerHTML = `Error: ${error.message}`;
-                    console.error(error);
-                });
-        });
-    </script>
-</body>
-</html>
+btnRamalan.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const horoskop = document.getElementById('horoskop').value;
+    const ramalan = ramalanData[horoskop];
+    if (ramalan) {
+        hasil.innerHTML = `Halo ${nama}, ramalan horoskop Anda hari ini adalah: <br><br>${ramalan}`;
+    } else {
+        hasil.innerHTML = `Maaf, ramalan horoskop tidak tersedia untuk ${horoskop}`;
+    }
+});
