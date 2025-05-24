@@ -132,7 +132,7 @@ Jam Baik: 11.00-12.00`
       }
 
       const tgl = parseInt(input.substring(0, 2), 10);
-      const bln = parseInt(input.substring(2, 4), 10) - 1; // bulan 0-11
+      const bln = parseInt(input.substring(2, 4), 10) - 1;
       const thn = parseInt(input.substring(4, 8), 10);
       const date = new Date(thn, bln, tgl);
 
@@ -141,17 +141,13 @@ Jam Baik: 11.00-12.00`
         return;
       }
 
-      // Cari Weton
       const hari = date.getDay();
       const offset = Math.floor((date - new Date(1970, 0, 1)) / 86400000);
       const pasaran = hariPasaran[offset % 5];
       const hariJw = hariJawa[hari];
       const weton = `${hariJw} ${pasaran}`;
-
-      // Cari Shio
       const shio = shioList[(thn - 1900) % 12];
 
-      // Cari Zodiak
       const mmdd = ("0" + (bln + 1)).slice(-2) + ("0" + tgl).slice(-2);
       const zodiak = zodiakList.find(z => {
         if (z.awal < z.akhir) {
@@ -161,7 +157,6 @@ Jam Baik: 11.00-12.00`
         }
       })?.nama || "Tidak diketahui";
 
-      // Ramalan
       const ramalan = ramalanData[zodiak] || "Ramalan tidak ditemukan untuk zodiak ini.";
 
       hasil.innerHTML = `
@@ -171,6 +166,12 @@ Jam Baik: 11.00-12.00`
         <strong>Zodiak:</strong> ${zodiak.charAt(0).toUpperCase() + zodiak.slice(1)}<br/><br/>
         <strong>Ramalan Hari Ini:</strong><br/>${ramalan.replace(/\n/g, "<br/>")}
       `;
+
+      // SUARA
+      const tts = new SpeechSynthesisUtterance(`Ramalan untuk zodiak ${zodiak}. ${ramalan.replace(/\n/g, ". ")}`);
+      tts.lang = "id-ID";
+      tts.rate = 1;
+      window.speechSynthesis.speak(tts);
     }
   </script>
 </body>
