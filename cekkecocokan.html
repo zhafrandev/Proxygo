@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cek Kecocokan Cinta Berdasarkan Nama</title>
+  <title>Cek Kecocokan Cinta</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -42,6 +42,15 @@
       margin-top: 15px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .emoji {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -72,24 +81,34 @@
         total += combined.charCodeAt(i);
       }
 
-      // Ubah total jadi persentase antara 50%–100%
       const persen = 50 + (total % 51); // hasil antara 50–100
 
-      let pesan = "";
+      let pesan = "", emoji = "";
       if (persen >= 90) {
         pesan = "Cinta kalian seperti di drama Korea!";
+        emoji = "❤️‍🔥";
       } else if (persen >= 75) {
         pesan = "Pasangan yang serasi, lanjutkan!";
+        emoji = "❤️";
       } else if (persen >= 60) {
         pesan = "Ada harapan, saling pengertian ya.";
+        emoji = "💕";
       } else {
         pesan = "Butuh lebih banyak komunikasi dan perhatian.";
+        emoji = "💔";
       }
 
       hasil.innerHTML = `
+        <div class="emoji">${emoji}</div>
         <h3>${persen}% Cocok!</h3>
         <p>${pesan}</p>
       `;
+
+      // Suara
+      const ucap = new SpeechSynthesisUtterance(`Nama ${nama1} dan ${nama2}, tingkat kecocokan ${persen} persen. ${pesan}`);
+      ucap.lang = "id-ID";
+      speechSynthesis.cancel(); // Hentikan suara sebelumnya
+      speechSynthesis.speak(ucap);
     }
   </script>
 </body>
