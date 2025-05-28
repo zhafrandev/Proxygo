@@ -3,80 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CEK KECOCOKAN CINTA</title>
+  <title>Cek Kecocokan Cinta</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      margin: 0;
-      padding: 0;
-      background: #f8f8f8;
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
     }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
+
+    h1 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    input {
       padding: 10px;
-    }
-    h3 {
+      margin: 5px;
       font-size: 16px;
-      margin-bottom: 10px;
-      color: #d32f2f;
-      text-align: center;
-    }
-    input[type="text"], button {
-      width: 100%;
-      padding: 6px 8px;
-      margin: 6px 0;
-      font-size: 12px;
-      box-sizing: border-box;
-    }
-    button {
-      background-color: #e91e63;
-      color: white;
+      width: 200px;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
     }
-    button:hover {
-      background-color: #c2185b;
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #ff4d6d;
+      color: white;
+      border-radius: 10px;
     }
+
     .hasil {
+      margin-top: 20px;
+      padding: 15px;
       background-color: white;
-      border-radius: 8px;
-      padding: 10px 15px;
-      margin-top: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      font-size: 12px;
-      text-align: center;
-      animation: fadeIn 0.4s ease-in-out;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
+
     .emoji {
-      font-size: 24px;
-      margin-bottom: 6px;
+      font-size: 32px;
     }
-    @media screen and (max-width: 480px) {
-      h3 { font-size: 14px; }
-      input, button { font-size: 11px; padding: 5px 6px; }
-      .hasil { font-size: 11px; }
-      .emoji { font-size: 20px; }
+
+    small {
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h3>CEK KECOCOKAN CINTA</h3>
-    <input type="text" id="nama1" placeholder="Nama Kamu" />
-    <input type="text" id="nama2" placeholder="Nama Pasangan" />
-    <button onclick="cekCinta()">Cek Kecocokan</button>
-    <div id="daftarHasil"></div>
-  </div>
+  <h1>Cek Kecocokan Cinta 💘</h1>
+
+  <input type="text" id="nama1" placeholder="Nama Pertama" />
+  <br/>
+  <input type="text" id="nama2" placeholder="Nama Kedua" />
+  <br/>
+  <button onclick="cekCinta()">Cek Kecocokan</button>
+
+  <div id="daftarHasil"></div>
 
   <script>
-    const daftarHasil = document.getElementById("daftarHasil");
-
     function cekCinta() {
       const nama1 = document.getElementById("nama1").value.trim().toLowerCase();
       const nama2 = document.getElementById("nama2").value.trim().toLowerCase();
@@ -92,23 +84,46 @@
         total += combined.charCodeAt(i);
       }
 
-      const persen = 50 + (total % 51); // 50 - 100
+      const persen = 50 + (total % 51); // 50–100
 
       let pesan = "", emoji = "";
-      if (persen >= 90) {
-        pesan = "Cinta kalian seperti di drama Korea!";
-        emoji = "❤️‍🔥";
-      } else if (persen >= 75) {
-        pesan = "Pasangan yang serasi, lanjutkan!";
-        emoji = "❤️";
-      } else if (persen >= 60) {
-        pesan = "Ada harapan, saling pengertian ya.";
-        emoji = "💕";
-      } else {
-        pesan = "Butuh lebih banyak komunikasi dan perhatian.";
+
+      if (persen < 55) {
+        pesan = "Hubungan kalian perlu banyak usaha dan doa.";
         emoji = "💔";
+      } else if (persen < 60) {
+        pesan = "Saling pengertian jadi kunci hubungan ini.";
+        emoji = "💧";
+      } else if (persen < 65) {
+        pesan = "Ada potensi, tapi butuh waktu dan kejujuran.";
+        emoji = "🌱";
+      } else if (persen < 70) {
+        pesan = "Kalian bisa cocok jika sama-sama berkomitmen.";
+        emoji = "💞";
+      } else if (persen < 75) {
+        pesan = "Kecocokan cukup baik, jangan sia-siakan.";
+        emoji = "💓";
+      } else if (persen < 80) {
+        pesan = "Cinta kalian mulai berbunga!";
+        emoji = "🌸";
+      } else if (persen < 85) {
+        pesan = "Kalian pasangan harmonis, lanjutkan!";
+        emoji = "💖";
+      } else if (persen < 90) {
+        pesan = "Hubungan kalian nyaris sempurna!";
+        emoji = "💘";
+      } else if (persen < 95) {
+        pesan = "Cinta sejati ini! Selalu setia dan jaga hati.";
+        emoji = "❤️";
+      } else if (persen < 100) {
+        pesan = "Wah, ini pasangan goals banget!";
+        emoji = "❤️‍🔥";
+      } else {
+        pesan = "Kalian diciptakan untuk satu sama lain!";
+        emoji = "💍";
       }
 
+      const daftarHasil = document.getElementById("daftarHasil");
       const div = document.createElement("div");
       div.className = "hasil";
       div.innerHTML = `
@@ -120,12 +135,10 @@
 
       daftarHasil.prepend(div);
 
-      // Batasi maksimal 3 hasil
       if (daftarHasil.children.length > 3) {
         daftarHasil.removeChild(daftarHasil.lastChild);
       }
 
-      // Suara
       const ucapan = new SpeechSynthesisUtterance(
         `Nama ${nama1} dan ${nama2}, tingkat kecocokan ${persen} persen. ${pesan}`
       );
