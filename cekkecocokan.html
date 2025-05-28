@@ -3,71 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cek Kecocokan Cinta</title>
+  <title>CEK KECOCOKAN CINTA</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #fff0f5;
-      padding: 0;
+      font-size: 12px;
       margin: 0;
+      padding: 0;
+      background: #f8f8f8;
     }
     .container {
-      max-width: 500px;
-      margin: auto;
-      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px;
     }
-    h2 {
-      color: #d6336c;
+    h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #d32f2f;
       text-align: center;
     }
     input[type="text"], button {
       width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      font-size: 14px;
+      padding: 6px 8px;
+      margin: 6px 0;
+      font-size: 12px;
+      box-sizing: border-box;
     }
     button {
-      background-color: #ff4081;
+      background-color: #e91e63;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
     }
     button:hover {
-      background-color: #e91e63;
+      background-color: #c2185b;
     }
     .hasil {
-      background: #fff;
-      padding: 15px;
+      background-color: white;
       border-radius: 8px;
+      padding: 10px 15px;
       margin-top: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-size: 12px;
       text-align: center;
-      animation: fadeIn 0.5s ease-in-out;
+      animation: fadeIn 0.4s ease-in-out;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
     .emoji {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 6px;
     }
     @media screen and (max-width: 480px) {
-      h2 {
-        font-size: 18px;
-      }
-      input, button {
-        font-size: 12px;
-      }
-      .emoji {
-        font-size: 24px;
-      }
+      h3 { font-size: 14px; }
+      input, button { font-size: 11px; padding: 5px 6px; }
+      .hasil { font-size: 11px; }
+      .emoji { font-size: 20px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>CEK KECOCOKAN CINTA</h2>
+    <h3>CEK KECOCOKAN CINTA</h3>
     <input type="text" id="nama1" placeholder="Nama Kamu" />
     <input type="text" id="nama2" placeholder="Nama Pasangan" />
     <button onclick="cekCinta()">Cek Kecocokan</button>
@@ -92,7 +92,7 @@
         total += combined.charCodeAt(i);
       }
 
-      const persen = 50 + (total % 51); // 50-100
+      const persen = 50 + (total % 51); // 50 - 100
 
       let pesan = "", emoji = "";
       if (persen >= 90) {
@@ -113,12 +113,11 @@
       div.className = "hasil";
       div.innerHTML = `
         <div class="emoji">${emoji}</div>
-        <h3>${persen}% Cocok!</h3>
-        <p>${nama1} & ${nama2}</p>
-        <p>${pesan}</p>
+        <strong>${persen}% Cocok!</strong><br/>
+        <span>${nama1} & ${nama2}</span><br/>
+        <small>${pesan}</small>
       `;
 
-      // Tambahkan hasil di atas
       daftarHasil.prepend(div);
 
       // Batasi maksimal 3 hasil
